@@ -1,0 +1,46 @@
+
+
+#include <iostream>
+using namespace std;
+ void rightrotate(int arr[],int n)
+ {
+     
+     int j,i;
+     for(i=0;i<n;i++)
+     {
+       int temp=arr[0];
+       for(i=0;i<n-1;i++)
+        arr[i]=arr[i+1];
+       arr[n-1]=temp;       
+       for(j=0;j<n;j++)
+       {
+           cout<<arr[j]<<" ";
+       }
+     }
+ }
+int main()
+{
+    int n,arr[1000],i,k=0,dup[1000];
+   cin>>n;
+   for(i=0;i<n;i++)
+   {
+      cin>>arr[i]; 
+   }
+   for(i=n-1;i>0;i--)
+   {
+       dup[k++]=arr[i];
+       
+   }
+   for(i=0;i<n;i++)
+   {
+         rightrotate(arr,n); 
+         
+   }
+      for(i=n-1;i>0;i--)
+   {
+      
+       rightrotate(dup,n); 
+   }
+   
+    return 0;
+}
